@@ -1,4 +1,4 @@
-## Lumen FormRequest
+## Lumen Form Request
 
 A package that helps developer to segregate the validation logic from controller to a separate dedicated class. Lumen doesn't have any `FormRequest` class like Laravel. This will let you do that.
 
