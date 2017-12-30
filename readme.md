@@ -1,4 +1,10 @@
-## Lumen Form Request
+Lumen Form Request
+==========
+![php-badge](https://img.shields.io/badge/php-%3E%3D%205.6-8892BF.svg)
+[![packagist-badge](https://img.shields.io/packagist/v/albertcht/lumen-form-request.svg)](https://packagist.org/packages/albertcht/lumen-form-request)
+[![Total Downloads](https://poser.pugx.org/albertcht/lumen-form-request/downloads)](https://packagist.org/packages/albertcht/lumen-form-request)
+
+## Description
 
 A package that helps developer to segregate the validation logic from controller to a separate dedicated class. Lumen doesn't have any `FormRequest` class like Laravel. This will let you do that.
 
