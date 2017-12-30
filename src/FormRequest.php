@@ -1,29 +1,35 @@
-<?php namespace Anik\Form;
+<?php
+
+namespace AlbertCht\Form;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\UnauthorizedException;
+use Illuminate\Validation\ValidationException;
 
 abstract class FormRequest extends Request
 {
-	public function validate () {
-		if (false === $this->authorize()) {
-			throw new UnauthorizedException();
-		}
+    public function validate ()
+    {
+        if (false === $this->authorize()) {
+            throw new UnauthorizedException();
+        }
 
-		$validator = app('validator')->make($this->all(), $this->rules(), $this->messages());
+        $validator = app('validator')->make($this->all(), $this->rules(), $this->messages());
 
-		if ($validator->fails()) {
-			throw new ValidationException($validator->errors());
-		}
-	}
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
+        }
+    }
 
-	protected function authorize () {
-		return true;
-	}
+    protected function authorize ()
+    {
+        return true;
+    }
 
-	abstract protected function rules ();
+    abstract protected function rules ();
 
-	protected function messages () {
-		return [];
-	}
+    protected function messages ()
+    {
+        return [];
+    }
 }
