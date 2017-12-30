@@ -12,7 +12,7 @@ A package that helps developer to segregate the validation logic from controller
 ### Installation
 
 ```
-composer require composer require albertcht/lumen-form-request
+composer require albertcht/lumen-form-request
 ```
 
 * Add the service provider in `bootstrap/app.php`
