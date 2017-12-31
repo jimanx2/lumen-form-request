@@ -22,7 +22,7 @@ abstract class FormRequest extends Request
         }
     }
 
-    protected function resolveUser()
+    public function resolveUser()
     {
         if (method_exists($this, 'setUserResolver')) {
             $this->setUserResolver(function () {
