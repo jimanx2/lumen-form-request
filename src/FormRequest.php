@@ -5,10 +5,11 @@ namespace AlbertCht\Form;
 use Illuminate\Http\Request;
 use Illuminate\Validation\UnauthorizedException;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Auth;
 
 abstract class FormRequest extends Request
 {
-    public function validate ()
+    public function validate()
     {
         if (false === $this->authorize()) {
             throw new UnauthorizedException();
@@ -21,7 +22,16 @@ abstract class FormRequest extends Request
         }
     }
 
-    protected function authorize ()
+    protected function resolveUser()
+    {
+        if (method_exists($this, 'setUserResolver')) {
+            $this->setUserResolver(function () {
+                return Auth::user();
+            });
+        }
+    }
+
+    protected function authorize()
     {
         return true;
     }
