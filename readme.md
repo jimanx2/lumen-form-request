@@ -25,7 +25,7 @@ Next step is create your FormRequest and extends from `AlbertCht\Form\FormReques
 
 ### Example
 
-```
+```php
 <?php
 
 namespace App\Http\Requests;
